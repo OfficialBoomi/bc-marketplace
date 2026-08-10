@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.8
+
+- Skill folder now ships the changelog
+- Minor and major version bumps are now honored
+
+
+## 0.2.7
+
+- Add Documentation and Related Plugins & Skills sections to plugin and skill READMEs
+
+
 ## 0.2.6
 
 - Update feedback email to developer-offerings@boomi.com

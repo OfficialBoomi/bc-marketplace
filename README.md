@@ -6,6 +6,27 @@ A Claude Code plugin for searching and installing Boomi Marketplace recipes. Rec
 
 This project is licensed under the [BSD-2-Clause License](LICENSE). If you fork or modify this code, you should not use the name "Boomi" for your version.
 
+## Documentation
+
+For a full overview of Boomi Companion, including concepts, usage guidance, and additional resources, see the [Boomi Companion overview](https://developer.boomi.com/docs/BoomiCompanion/Boomi_companion_overview) on the Boomi Developer Portal.
+
+## Related Plugins & Skills
+
+Other plugins available in Boomi Companion:
+
+| Plugin | Description |
+|--------|-------------|
+| [bc-integration](https://github.com/OfficialBoomi/bc-integration) | Skills, commands, and agents for building Boomi integrations |
+
+The underlying skills are also available as standalone packages for use with other AI agents, or to fork and modify for your own needs:
+
+| Skill | Description |
+|--------|-------------|
+| [boomi-integration](https://github.com/OfficialBoomi/boomi-integration) | Skill for building Boomi integrations |
+| [boomi-marketplace](https://github.com/OfficialBoomi/boomi-marketplace) | Skill for searching and installing Boomi Marketplace recipes |
+
+See the [Boomi Companion marketplace](https://github.com/OfficialBoomi/boomi-companion) for the complete registry.
+
 ## Feedback & Issues
 
 Found a bug or have a feature idea? Email developer-offerings@boomi.com with a clear description, steps to reproduce, and any relevant error messages.

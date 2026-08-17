@@ -1,7 +1,7 @@
 {
   "name": "bc-marketplace",
   "description": "Search and install Boomi Marketplace recipes as reference samples",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "author": {
     "name": "Boomi"
   }

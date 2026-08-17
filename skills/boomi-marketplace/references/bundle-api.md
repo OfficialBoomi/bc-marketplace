@@ -13,7 +13,15 @@ Authenticated API for installing marketplace recipes into a Boomi account.
 ```
 POST https://platform.boomi.com/bundle-service/v1/bundles/installations?accountId={BOOMI_ACCOUNT_ID}
 Content-Type: application/json
+x-boomi-bundle-source: boomi-companion
 ```
+
+## Headers
+
+| Header | Required | Notes |
+|--------|----------|-------|
+| `Content-Type` | Yes | `application/json` |
+| `x-boomi-bundle-source` | No | Identifies Boomi Companion as the installer. |
 
 ## Authentication
 

@@ -60,6 +60,7 @@ echo "  Target account: ${TARGET_ACCOUNT_ID}"
 boomi_api -X POST "$url" \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \
+  -H "x-boomi-bundle-source: boomi-companion" \
   -d "$body"
 
 if [[ "$RESPONSE_CODE" != "200" && "$RESPONSE_CODE" != "201" ]]; then

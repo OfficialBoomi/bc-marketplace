@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.9
+
+- Send `x-boomi-bundle-source: boomi-companion` on recipe installs
+
+
 ## 0.2.8
 
 - Skill folder now ships the changelog

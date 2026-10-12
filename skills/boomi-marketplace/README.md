@@ -35,7 +35,8 @@ A distributable skill that provides AI coding agents with knowledge and tooling 
 
 - Searching the public Boomi Marketplace for published recipes matching an app or use case
 - Installing recipe bundles into a target Boomi account as reference samples
-- Activity logging for all install attempts
+- Downloading supporting documents (setup guides, PDFs) bundled with a recipe
+- Activity logging for all install and supporting materials attempts
 
 Recipes are reference patterns, not production-ready components. Use them for structure and approach when building integrations.
 
@@ -44,9 +45,10 @@ Recipes are reference patterns, not production-ready components. Use them for st
 - `curl` (universally available)
 - `jq` (install via `brew install jq` on macOS or `apt install jq` on Linux)
 
-### For installs only
+### For installs and supporting materials only
 
-- The `bc-integration` plugin must be installed and its skill loaded — the install script sources `boomi-common.sh` from bc-integration for authentication, credential validation, and activity logging.
+- `unzip` (supporting materials only; preinstalled on macOS and most Linux distributions)
+- The `bc-integration` plugin must be installed and its skill loaded — the install and supporting materials scripts source `boomi-common.sh` from bc-integration for authentication, credential validation, and activity logging.
 - A configured `.env` file in your project root with Boomi platform API credentials (see the boomi-integration skill README for details).
 
 ## Installation
@@ -71,6 +73,7 @@ Clone or copy this skill directory into the location your platform uses for agen
 1. **Search** — Describe what you're building. The agent queries the Marketplace GraphQL API for matching recipes (no authentication required).
 2. **Install** — The agent creates a `marketplace-imports` subfolder inside a project folder and runs the install script to deploy the recipe bundle there.
 3. **Read** — The agent uses bc-integration's component pulling workflow to fetch the installed process XML and its dependencies locally for review.
+4. **Supporting materials** — The agent runs the supporting materials script to save any documents bundled with the recipe locally and reads them alongside the components.
 
 ### Example Workflow
 
@@ -90,22 +93,28 @@ Agent: [Creates marketplace-imports folder]
 
 ## Tools Overview
 
-The skill makes the following CLI tool available to the agent:
+The skill makes the following CLI tools available to the agent:
 
 - `boomi-marketplace-install.sh` — Installs a marketplace recipe bundle into a target folder. Handles authentication via bc-integration's shared infrastructure, validates credentials before calling the API, and logs all activity.
 
 ```
-BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash scripts/boomi-marketplace-install.sh --bundle-id <artifactSourceId> --folder-id <numeric_folder_id>
+BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash <skill-path>/scripts/boomi-marketplace-install.sh --bundle-id <artifactSourceId> --folder-id <numeric_folder_id>
 ```
 
 Optional: `--target-account-id <ID>` overrides the install target (defaults to `BOOMI_ACCOUNT_ID` from `.env`).
+
+- `boomi-marketplace-supporting-materials.sh` — Downloads a recipe bundle and extracts its supporting documents into a local folder. Read-only; nothing is written to the Boomi account. Definition files (YAML, XML, JSON) are not extracted.
+
+```
+BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash <skill-path>/scripts/boomi-marketplace-supporting-materials.sh --bundle-id <artifactSourceId> --output-dir <dir>
+```
 
 ## Documentation Structure
 
 The skill includes the following reference documentation:
 
 - [GraphQL API](references/graphql-api.md) — Public catalog search queries and response format
-- [Bundle API](references/bundle-api.md) — Authenticated recipe installation via the Bundle Service API
+- [Bundle API](references/bundle-api.md) — Authenticated recipe installation and supporting materials download via the Bundle Service API
 
 ## Support and Issues
 

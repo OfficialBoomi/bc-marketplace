@@ -43,7 +43,7 @@ Or browse and install via `/plugin` interactively.
 ## Dependencies
 
 - **Search** works standalone — no other plugins required.
-- **Install** requires the `bc-integration` plugin. The install script sources `boomi-common.sh` from bc-integration for authentication and activity logging. Folder creation and component pulling also use bc-integration's tools.
+- **Install** and **supporting materials download** require the `bc-integration` plugin. Both scripts source `boomi-common.sh` from bc-integration for authentication and activity logging. Folder creation and component pulling also use bc-integration's tools.
 
 ## Skill: boomi-marketplace
 
@@ -54,23 +54,30 @@ Search the Boomi Marketplace catalog and install recipes into a target account.
 1. **Search** — Query the public GraphQL API for published recipes matching an app or use case (no authentication required).
 2. **Install** — Run the install script to deploy a recipe bundle into a `marketplace-imports` subfolder inside a project folder.
 3. **Read** — Use bc-integration's component pulling workflow to fetch the installed process XML and its dependencies locally.
+4. **Supporting materials** — Run the supporting materials script to save any documents bundled with the recipe (setup guides, PDFs) locally.
 
 ### CLI Tools
 
 **Recipe Install** — Installs a marketplace recipe into a target folder:
 
 ```bash
-BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash scripts/boomi-marketplace-install.sh --bundle-id <artifactSourceId> --folder-id <numeric_folder_id>
+BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash <skill-path>/scripts/boomi-marketplace-install.sh --bundle-id <artifactSourceId> --folder-id <numeric_folder_id>
 ```
 
 Optional: `--target-account-id <ID>` overrides the install target (defaults to `BOOMI_ACCOUNT_ID` from `.env`).
+
+**Supporting Materials Download** — Downloads a recipe bundle and extracts its supporting documents locally (read-only):
+
+```bash
+BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash <skill-path>/scripts/boomi-marketplace-supporting-materials.sh --bundle-id <artifactSourceId> --output-dir <dir>
+```
 
 ### Reference Docs
 
 | Document | Description |
 |----------|-------------|
 | [GraphQL API](skills/boomi-marketplace/references/graphql-api.md) | Public catalog search queries |
-| [Bundle API](skills/boomi-marketplace/references/bundle-api.md) | Authenticated recipe installation |
+| [Bundle API](skills/boomi-marketplace/references/bundle-api.md) | Authenticated recipe installation and supporting materials download |
 
 ## Structure
 
@@ -81,6 +88,7 @@ skills/
     SKILL.md
     scripts/
       boomi-marketplace-install.sh
+      boomi-marketplace-supporting-materials.sh
     references/
       graphql-api.md
       bundle-api.md

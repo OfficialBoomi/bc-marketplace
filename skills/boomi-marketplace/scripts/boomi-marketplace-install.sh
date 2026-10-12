@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Install a Boomi Marketplace recipe via the Bundle Service API
-# Usage: BOOMI_COMMON_SH=/path/to/boomi-common.sh bash scripts/boomi-marketplace-install.sh --bundle-id <ID> --folder-id <NUMERIC_ID> [--target-account-id <ID>]
+# Usage: BOOMI_COMMON_SH=/path/to/boomi-common.sh bash <skill-path>/scripts/boomi-marketplace-install.sh --bundle-id <ID> --folder-id <NUMERIC_ID> [--target-account-id <ID>]
 
 # --- Source shared infrastructure from bc-integration ---
 if [[ -z "${BOOMI_COMMON_SH:-}" ]]; then
@@ -37,7 +37,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$BUNDLE_ID" || -z "$FOLDER_ID" ]]; then
-  echo "Usage: BOOMI_COMMON_SH=/path/to/boomi-common.sh bash scripts/boomi-marketplace-install.sh --bundle-id <ID> --folder-id <NUMERIC_ID> [--target-account-id <ID>]" >&2
+  echo "Usage: BOOMI_COMMON_SH=/path/to/boomi-common.sh bash <skill-path>/scripts/boomi-marketplace-install.sh --bundle-id <ID> --folder-id <NUMERIC_ID> [--target-account-id <ID>]" >&2
   exit 1
 fi
 

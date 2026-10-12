@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.10
+
+- Add supporting materials download for recipe bundles
+- Fix script invocation paths in skill docs
+
+
 ## 0.2.9
 
 - Send `x-boomi-bundle-source: boomi-companion` on recipe installs

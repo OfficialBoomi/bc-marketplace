@@ -30,6 +30,7 @@ skills/
     SKILL.md
     scripts/
       boomi-marketplace-install.sh
+      boomi-marketplace-supporting-materials.sh
     references/
       graphql-api.md
       bundle-api.md

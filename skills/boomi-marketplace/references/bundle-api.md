@@ -76,6 +76,10 @@ Handled by the install script via bc-integration's `boomi-common.sh`. Do not con
 
 The `copiedComponentId` in each artifact result is the installed component ID, readable via the Platform API.
 
+## Supporting Materials Download
+
+Use `scripts/boomi-marketplace-supporting-materials.sh`; do not call the download endpoint directly.
+
 ## Scope
 
 This skill covers integration recipe installation (artifact type `PACKAGED_COMPONENT`). The Bundle Service also supports Boomi Flow and other platform services, but installation and usage for those differ and are not covered here.

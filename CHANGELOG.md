@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.11
+
+- Make documentation agent-neutral by removing Claude-specific install steps and references
+
+
 ## 0.2.10
 
 - Add supporting materials download for recipe bundles

@@ -1,6 +1,6 @@
 # bc-marketplace
 
-A Claude Code plugin for searching and installing Boomi Marketplace recipes. Recipes are installed as reference samples — use them to inform how integrations are built, not as production-ready components.
+An AI agent plugin for searching and installing Boomi Marketplace recipes. Recipes are installed as reference samples — use them to inform how integrations are built, not as production-ready components.
 
 > **Important:** Boomi Companion is a publicly available developer offering, not an officially supported Boomi product. It is provided as-is and is not covered by Boomi support agreements or SLAs. Boomi curates and maintains this tool on a best-effort basis — treat it as a self-service resource. Boomi reserves the right to modify or discontinue it at any time without notice.
 
@@ -33,12 +33,7 @@ Found a bug or have a feature idea? Email developer-offerings@boomi.com with a c
 
 ## Installation
 
-```bash
-/plugin marketplace add OfficialBoomi/boomi-companion
-/plugin install bc-marketplace@boomi-companion
-```
-
-Or browse and install via `/plugin` interactively.
+Copy the skill directory (`skills/boomi-marketplace`) into the location your platform uses for agent skills. Consult your platform's documentation for the correct skill directory path.
 
 ## Dependencies
 
@@ -78,18 +73,3 @@ BOOMI_COMMON_SH=<path/to/boomi-common.sh> bash <skill-path>/scripts/boomi-market
 |----------|-------------|
 | [GraphQL API](skills/boomi-marketplace/references/graphql-api.md) | Public catalog search queries |
 | [Bundle API](skills/boomi-marketplace/references/bundle-api.md) | Authenticated recipe installation and supporting materials download |
-
-## Structure
-
-```
-.claude-plugin/plugin.json
-skills/
-  boomi-marketplace/
-    SKILL.md
-    scripts/
-      boomi-marketplace-install.sh
-      boomi-marketplace-supporting-materials.sh
-    references/
-      graphql-api.md
-      bundle-api.md
-```

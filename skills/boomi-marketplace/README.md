@@ -12,7 +12,7 @@ For a full overview of Boomi Companion, including concepts, usage guidance, and 
 
 ## Related Plugins & Skills
 
-This skill is also part of [Boomi Companion](https://github.com/OfficialBoomi/boomi-companion), which includes the following Claude Code plugins:
+This skill is also part of [Boomi Companion](https://github.com/OfficialBoomi/boomi-companion), which includes the following AI agent plugins:
 
 | Plugin | Description |
 |--------|-------------|
@@ -52,17 +52,6 @@ Recipes are reference patterns, not production-ready components. Use them for st
 - A configured `.env` file in your project root with Boomi platform API credentials (see the boomi-integration skill README for details).
 
 ## Installation
-
-### Claude Code (via the bc-marketplace plugin)
-
-Install through the Claude Code plugin system — the skill is included automatically:
-
-1. Add the Boomi marketplace: `/plugin marketplace add OfficialBoomi/boomi-companion`
-2. Install the plugin: `/plugin install bc-marketplace@boomi-companion`
-
-Alternatively, navigate the `/plugin` menu interactively within Claude Code to add the marketplace and install.
-
-### Manual configuration
 
 Clone or copy this skill directory into the location your platform uses for agent skills. Consult your platform's documentation for the correct skill directory path.
 
@@ -118,13 +107,7 @@ The skill includes the following reference documentation:
 
 ## Support and Issues
 
-This skill is designed originally for Claude Code, but Agent Skills are an open standard accessible to other models and platforms.
-
-More info about agent skills can be found here: https://agentskills.io/home
-and here: https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
-
 If you encounter issues:
 
-1. This course provides an excellent intro to Claude Code: https://anthropic.skilljar.com/claude-code-in-action
+1. Your AI agent can often help troubleshoot and explain issues
 2. We would love your feedback and input via developer-offerings@boomi.com
-3. Your AI agent can often help troubleshoot and explain issues
